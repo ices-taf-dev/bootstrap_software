@@ -4,7 +4,7 @@
 ## Before: canum.txt, caton.txt, fleet.txt, fprop.txt, index.txt, lai.txt,
 ##         matprop.txt, mprop.txt,
 ##         Smoothed_span50_M_NotExtrapolated_NSASSMS2016.csv, weca.txt,
-##         west_raw.txt (begin/initial/data)
+##         west_raw.txt (bootstrap/user/data)
 ## After:  data.RData (data)
 
 library(icesTAF)
@@ -15,7 +15,7 @@ source("utilities.R")
 
 mkdir("data")
 
-setwd("begin/initial/data")
+setwd("bootstrap/user/data")
 
 ### ============================================================================
 ### Prepare stock object for assessment

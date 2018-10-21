@@ -1,11 +1,37 @@
+## taf.install <- function(owner, repo, ref){}
+
+library(icesTAF)
+
+mkdir("bootstrap/library")
+mkdir("bootstrap/packages")
+.libPaths(unique(c("bootstrap/library", .libPaths())))
+
+## FLCore 2.6.6 [2018-02-21]
+download("https://codeload.github.com/flr/FLCore/legacy.tar.gz/d0333c17e8ba093de41d426df88db4776fcdc8c7",
+         destfile="bootstrap/packages/flr-FLCore-d0333c1.tar.gz")
+install.packages("bootstrap/packages/flr-FLCore-d0333c1.tar.gz", repos=NULL)
+
+## stockassessment 0.5.4 [2017-10-11]
+download("https://codeload.github.com/fishfollower/SAM/legacy.tar.gz/25b35914cdf2f210a8b3bc0712e32dfbc1dde73b",
+         destfile="bootstrap/packages/fishfollower-SAM-25b3591.tar.gz")
+untar("bootstrap/packages/fishfollower-SAM-25b3591.tar.gz", exdir="bootstrap/packages")
+install.packages("bootstrap/packages/fishfollower-SAM-25b3591/stockassessment", repos=NULL)
+unlink("bootstrap/packages/fishfollower-SAM-25b3591", recursive=TRUE)
+
+## FLSAM 2.1.0 [2018-01-24]
+download("https://codeload.github.com/flr/FLSAM/legacy.tar.gz/7e078fa5258ce7051fe7db39716ca66fda84c750",
+         destfile="bootstrap/packages/flr-FLSAM-7e078fa.tar.gz")
+install.packages("bootstrap/packages/flr-FLSAM-7e078fa.tar.gz", repos=NULL)
+
+
+
+################################################################################
+
 download_github <- function(repo, path, ref="master", dir=".")
 {
   url <- paste("https://github.com", repo, "raw", ref, path, sep="/")
   download(url, dir=dir)
 }
-
-mkdir("bootstrap/packages")
-
 
 repo <- "flr/R"
 path <- "src/contrib/FLCore_2.6.6.tar.gz"
@@ -77,7 +103,7 @@ install.packages("~/ices-tools-prod-icesTAF-1.6-2-1-gca7d511.tar.gz")
 "https://codeload.github.com/fishfollower/SAM/legacy.tar.gz/25b3591"
 cp("~/fishfollower-SAM-v0.03-505-g25b3591.tar.gz", "bootstrap/packages", move=TRUE)
 untar("bootstrap/packages/fishfollower-SAM-v0.03-505-g25b3591.tar.gz", exdir="bootstrap/packages")
-install.packages("bootstrap/packages/fishfollower-SAM-25b3591/stockassessment", repos=NULL)
+install.packages("bootstrap/packages/fishfollower-SAM-g25b3591/stockassessment", repos=NULL)
 
 ## 2.2  download -> install
 
@@ -95,3 +121,8 @@ install.packages("bootstrap/packages/fishfollower-SAM-25b3591/stockassessment",
 ################################################################################
 
 https://codeload.github.com/flr/FLSAM/legacy.tar.gz/7e078fa
+
+################################################################################
+
+FLCore 2.6.6
+d0333c17e8ba093de41d426df88db4776fcdc8c7

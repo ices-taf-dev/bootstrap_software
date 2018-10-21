@@ -4,6 +4,7 @@
 ## After:  fatage.csv, natage.csv, summary.csv (output)
 
 library(icesTAF)
+taf.library()
 suppressWarnings(suppressMessages(library(FLSAM)))
 
 mkdir("output")

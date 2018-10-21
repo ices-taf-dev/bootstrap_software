@@ -4,6 +4,7 @@
 ## After:  config.RData, data.RData, results.RData (model)
 
 library(icesTAF)
+taf.library()
 suppressWarnings(suppressMessages(library(FLSAM)))
 library(methods)
 

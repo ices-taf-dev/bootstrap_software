@@ -8,6 +8,7 @@
 ## After:  data.RData (data)
 
 library(icesTAF)
+taf.library()
 suppressMessages(library(FLCore))
 library(methods)
 library(reshape2)

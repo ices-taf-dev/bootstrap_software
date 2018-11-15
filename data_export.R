@@ -9,6 +9,7 @@
 ##         wstock.csv (data)
 
 library(icesTAF)
+taf.library()
 suppressMessages(library(FLCore))
 
 setwd("data")

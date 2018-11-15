@@ -10,3 +10,9 @@ taf.install("flr", "FLSAM", "7e078fa")
 taf.install("fishfollower", "SAM", "25b3591", subdir="stockassessment")
 
 ## bibtex::write.bib(taf.library())
+
+
+
+
+## cp("bootstrap/initial/data", "bootstrap")
+## taf.citations("bootstrap/CITATIONS.md")
